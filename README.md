@@ -22,7 +22,8 @@ Flask-Session (Manage session data)
 
 **Folder Structure**
 
-```Smart-Attendance-App-v1.0/
+```
+Smart-Attendance-App-v1.0/
 ├── launcher.py                       # Entry point: runs the app in a desktop window
 ├── attendance_app.py                 # Main Flask app code
 ├── face_recognition_backend.py       # Handles face recognition & dataset encodings
@@ -35,7 +36,8 @@ Flask-Session (Manage session data)
 │ ├── attendance.html
 │ └── camera.html
 ├── runtime_data/                     # Generated automatically (images, encodings, logs, session)
-└── requirements.txt                  # Python dependencies```
+└── requirements.txt                  # Python dependencies
+```
 
 
 
@@ -60,12 +62,14 @@ Export attendance via Export PDF
 
 **Notes**
 
-```The app generates runtime_data/ on first run.
+```
+The app generates runtime_data/ on first run.
 This folder stores:images/      → User face datasets
 encodings.pkl                   → Precomputed face encodings
 logs/                           → App logs
 flask_session/                  → Session data
-No initial dataset is required; new users can be added via GUI.```
+No initial dataset is required; new users can be added via GUI.
+```
 
 
 **License**
