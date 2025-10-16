@@ -11,13 +11,14 @@ Lightweight, easy-to-run, and fully Python-based.
 
 
 **Technologies Used**
-
+```
 Python 3.13.7
 Flask (Web interface inside desktop window)
 OpenCV (Webcam capture & image handling)
 face_recognition (AI-powered face recognition)
 FPDF (PDF report generation)
 Flask-Session (Manage session data)
+```
 
 
 **Folder Structure**
