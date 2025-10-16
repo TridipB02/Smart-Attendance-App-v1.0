@@ -22,15 +22,20 @@ Flask-Session (Manage session data)
 
 **Folder Structure**
 
-Smart Attendance App/
-│
-├── launcher.py                  # Entry point: runs the app in a desktop window
-├── attendance_app.py            # Main Flask app code
-├── face_recognition_backend.py  # Handles face recognition & dataset encodings
-├── static/                      # JS, CSS, other static files
-├── templates/                   # HTML templates for GUI
-├── runtime_data/                # Generated automatically (images, encodings, logs, session)
-└── requirements.txt             # Python dependencies
+Smart-Attendance-App-v1.0/
+├── launcher.py
+├── attendance_app.py
+├── face_recognition_backend.py
+├── static/
+│   ├── style.css
+│   └── script.js
+├── templates/
+│   ├── index.html
+│   ├── dataset.html
+│   ├── attendance.html
+│   └── camera.html
+└── requirements.txt
+
 
 
 
