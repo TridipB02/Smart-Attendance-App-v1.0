@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Attendance System</title>
+
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+        .btn-main {
+            font-size: 1.5rem;
+            padding: 15px 40px;
+            margin: 10px;
+            border-radius: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-main:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        .btn-attendance {
+            background-color: #28a745;
+            border: none;
+        }
+        .btn-dataset {
+            background-color: #ffc107;
+            border: none;
+            color: #333;
+        }
+        .btn-attendance:hover {
+            background-color: #218838;
+        }
+        .btn-dataset:hover {
+            background-color: #e0a800;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Smart Attendance System</h1>
+    <p>Choose an action to begin.</p>
+
+    <div>
+        <a href="/start_attendance" class="btn btn-main btn-attendance">
+            <i class="fas fa-user-check"></i> Start Attendance
+        </a>
+        <a href="/dataset" class="btn btn-main btn-dataset">
+            <i class="fas fa-folder-plus"></i> Set Dataset
+        </a>
+    </div>
+
+</body>
+</html>

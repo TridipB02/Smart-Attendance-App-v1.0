@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dataset Management - Smart Attendance</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { padding: 30px; background-color: #f8f9fa; }
+        .card { margin-bottom: 20px; }
+        .upload-btn, .delete-btn { margin-top: 10px; }
+        .thumb { width: 80px; height: 80px; object-fit: cover; border-radius: 5px; margin: 2px; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h2 class="mb-4">Manage Dataset</h2>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Add / Upload Image Form -->
+    <div class="card p-4">
+        <h5>Add New Image for a User</h5>
+        <form action="{{ url_for('dataset_page') }}" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="name" class="form-label">User Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter student name" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Select Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary upload-btn">Upload</button>
+        </form>
+    </div>
+
+    <!-- Existing Users -->
+    <div class="card p-4">
+        <h5>Existing Users</h5>
+        {% if users %}
+            <div class="row">
+                {% for user, images_list in users.items() %}
+                    <div class="col-md-3 col-sm-6">
+                        <div class="card text-center">
+                            <div class="card-body">
+                                <h6 class="card-title">{{ user }}</h6>
+                                <p class="card-text">{{ images_list|length }} image(s)</p>
+                                <!-- Thumbnails -->
+                                {% for img_file in images_list %}
+                                    <img class="thumb" src="{{ url_for('static', filename='../runtime_data/images/' + user + '/' + img_file) }}">
+                                {% endfor %}
+                                <!-- Delete User Form -->
+                                <form action="{{ url_for('delete_user', username=user) }}" method="POST">
+                                    <button type="submit" class="btn btn-danger delete-btn"
+                                            onclick="return confirm('Are you sure you want to delete this user?')">Delete User</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <p>No users found. Upload images to create dataset.</p>
+        {% endif %}
+    </div>
+
+    <a href="{{ url_for('index') }}" class="btn btn-secondary mt-4">Back to Home</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
