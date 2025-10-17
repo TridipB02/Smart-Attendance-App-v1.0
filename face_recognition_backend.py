@@ -7,7 +7,6 @@ from datetime import datetime
 import logging
 
 # ---------------- Persistent Base Directory ----------------
-# Use project-relative runtime_data folder
 BASE_DIR = os.path.join(os.getcwd(), "runtime_data")
 IMAGES_DIR = os.path.join(BASE_DIR, "images")
 ENCODINGS_FILE = os.path.join(BASE_DIR, "encodings.pkl")

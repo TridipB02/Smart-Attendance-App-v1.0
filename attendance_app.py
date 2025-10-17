@@ -22,7 +22,6 @@ app = Flask(__name__, template_folder="templates", static_folder="static")
 app.config['SECRET_KEY'] = 'supersecret'
 
 # ---------------- Persistent Base Directory --------------------
-# Use folder relative to the current project (clean GitHub-ready)
 BASE_DIR = os.path.join(os.getcwd(), "runtime_data")
 IMAGES_DIR = os.path.join(BASE_DIR, "images")
 ENCODINGS_FILE = os.path.join(BASE_DIR, "encodings.pkl")
